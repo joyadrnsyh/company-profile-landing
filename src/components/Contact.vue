@@ -1,69 +1,79 @@
 <template>
-  <section id="contact" class="py-5 bg-light">
+  <section id="contact" class="py-6 contact-section">
+    <!-- Glow Orb -->
+    <div class="glow-orb glow-orb-contact"></div>
+
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-3">Hubungi Kami</h2>
-        <p class="fs-5 text-muted">Kami siap menjawab pertanyaan Anda</p>
+        <div class="section-tag mb-2">HUBUNGI KAMI</div>
+        <h2 class="display-6 fw-extrabold text-white">Mari Mulai <span class="text-gradient">Kolaborasi</span></h2>
+        <p class="section-desc mt-2">Punya pertanyaan atau proyek kerja sama? Hubungi tim ahli kami sekarang juga.</p>
       </div>
 
       <div class="row g-4 mb-5">
         <div class="col-lg-4">
-          <div class="contact-box">
-            <div class="contact-icon">
-              <i class="bi bi-geo-alt"></i>
+          <div class="contact-box glass-card">
+            <div class="contact-icon-box mb-3">
+              <i class="bi bi-geo-alt-fill"></i>
             </div>
-            <h5 class="fw-bold mb-2">Alamat</h5>
-            <p class="text-muted">Jl. Merdeka No. 123<br />Jakarta, Indonesia 12345</p>
+            <h5 class="fw-bold mb-2 text-white">Alamat Kantor</h5>
+            <p class="text-muted small-text mb-0">Jl. Merdeka No. 123<br />Jakarta, Indonesia 12345</p>
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="contact-box">
-            <div class="contact-icon">
-              <i class="bi bi-telephone"></i>
+          <div class="contact-box glass-card">
+            <div class="contact-icon-box mb-3">
+              <i class="bi bi-telephone-fill"></i>
             </div>
-            <h5 class="fw-bold mb-2">Telepon</h5>
-            <p class="text-muted">+62 (21) 1234-5678<br />+62 821 9876 5432</p>
+            <h5 class="fw-bold mb-2 text-white">Kontak Langsung</h5>
+            <p class="text-muted small-text mb-0">+62 (21) 1234-5678<br />+62 821 9876 5432</p>
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="contact-box">
-            <div class="contact-icon">
-              <i class="bi bi-envelope"></i>
+          <div class="contact-box glass-card">
+            <div class="contact-icon-box mb-3">
+              <i class="bi bi-envelope-fill"></i>
             </div>
-            <h5 class="fw-bold mb-2">Email</h5>
-            <p class="text-muted">info@company.com<br />support@company.com</p>
+            <h5 class="fw-bold mb-2 text-white">Email Resmi</h5>
+            <p class="text-muted small-text mb-0">info@vortexsolutions.com<br />support@vortexsolutions.com</p>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form @submit.prevent="handleSubmit">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control form-control-lg" placeholder="Nama Lengkap" required />
+          <div class="form-wrapper glass-card p-4 p-md-5">
+            <form @submit.prevent="handleSubmit">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label text-white small fw-600 mb-1">Nama Lengkap</label>
+                  <input type="text" class="form-control form-input-glow form-control-lg" placeholder="Masukkan nama lengkap Anda" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label text-white small fw-600 mb-1">Alamat Email</label>
+                  <input type="email" class="form-control form-input-glow form-control-lg" placeholder="nama@email.com" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-white small fw-600 mb-1">Subjek Pesan</label>
+                  <input type="text" class="form-control form-input-glow form-control-lg" placeholder="Topik konsultasi / proyek" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-white small fw-600 mb-1">Detail Pesan</label>
+                  <textarea
+                    class="form-control form-input-glow form-control-lg"
+                    rows="5"
+                    placeholder="Tuliskan detail kebutuhan bisnis atau pertanyaan Anda di sini..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-glow-primary btn-lg w-100 py-3">
+                    <i class="bi bi-send-fill me-2"></i> Kirim Pesan Sekarang
+                  </button>
+                </div>
               </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control form-control-lg" placeholder="Email" required />
-              </div>
-              <div class="col-12">
-                <input type="text" class="form-control form-control-lg" placeholder="Subjek" required />
-              </div>
-              <div class="col-12">
-                <textarea
-                  class="form-control form-control-lg"
-                  rows="5"
-                  placeholder="Pesan Anda"
-                  required
-                ></textarea>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg w-100">
-                  <i class="bi bi-send me-2"></i> Kirim Pesan
-                </button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -72,62 +82,100 @@
 
 <script setup lang="ts">
 function handleSubmit() {
-  alert('Terima kasih! Pesan Anda telah terkirim.')
+  alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda kembali.')
 }
 </script>
 
 <style scoped>
+.contact-section {
+  background-color: #080f21;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-orb-contact {
+  position: absolute;
+  bottom: -5%;
+  left: 20%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.section-tag {
+  color: #06b6d4;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.fw-extrabold {
+  font-weight: 800;
+}
+
+.section-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
 .contact-box {
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
+  padding: 35px 30px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contact-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.contact-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.contact-icon-box {
+  width: 52px;
+  height: 52px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
+  color: #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.contact-box:hover .contact-icon-box {
+  background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
   color: white;
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
-.form-control,
-.form-control-lg {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 12px 20px;
-  font-size: 15px;
-  transition: 0.3s;
+.small-text {
+  font-size: 14.5px;
+  line-height: 1.6;
 }
 
-.form-control:focus,
-.form-control-lg:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+.form-wrapper {
+  background: rgba(16, 23, 41, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
+.form-wrapper:hover {
+  transform: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.fw-600 {
   font-weight: 600;
-  transition: 0.3s;
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+@media (max-width: 991px) {
+  .contact-section {
+    padding: 60px 0;
+  }
 }
 </style>
