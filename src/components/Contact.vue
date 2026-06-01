@@ -1,77 +1,108 @@
 <template>
   <section id="contact" class="py-6 contact-section">
-    <!-- Glow Orb -->
-    <div class="glow-orb glow-orb-contact"></div>
+    <!-- Background shape -->
+    <div class="contact-shape-circle"></div>
 
     <div class="container">
       <div class="text-center mb-5">
-        <div class="section-tag mb-2">HUBUNGI KAMI</div>
-        <h2 class="display-6 fw-extrabold text-white">Mari Mulai <span class="text-gradient">Kolaborasi</span></h2>
-        <p class="section-desc mt-2">Punya pertanyaan atau proyek kerja sama? Hubungi tim ahli kami sekarang juga.</p>
+        <div class="tp-section-tag mb-2">Contact Form</div>
+        <h2 class="tp-section-title display-6">Let’s Talk With Experience Advisors</h2>
       </div>
 
-      <div class="row g-4 mb-5">
+      <div class="row g-4 justify-content-center">
+        <!-- Left: headphone advisory panel -->
         <div class="col-lg-4">
-          <div class="contact-box glass-card">
-            <div class="contact-icon-box mb-3">
-              <i class="bi bi-geo-alt-fill"></i>
+          <div class="advisory-box p-4 h-100 d-flex flex-column justify-content-center">
+            <div class="advisory-icon-box mb-4">
+              <i class="bi bi-headset"></i>
             </div>
-            <h5 class="fw-bold mb-2 text-white">Alamat Kantor</h5>
-            <p class="text-muted small-text mb-0">Jl. Merdeka No. 123<br />Jakarta, Indonesia 12345</p>
+            <h3 class="fw-bold text-dark mb-3">Let’s Talk With Experience Advisors.</h3>
+            <p class="text-muted small-text mb-0">
+              Platform proteksi kami dirancang untuk menjamin kenyamanan Anda. Hubungi penasihat asuransi kami untuk mendapatkan rekomendasi produk yang paling cocok.
+            </p>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="contact-box glass-card">
-            <div class="contact-icon-box mb-3">
-              <i class="bi bi-telephone-fill"></i>
-            </div>
-            <h5 class="fw-bold mb-2 text-white">Kontak Langsung</h5>
-            <p class="text-muted small-text mb-0">+62 (21) 1234-5678<br />+62 821 9876 5432</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="contact-box glass-card">
-            <div class="contact-icon-box mb-3">
-              <i class="bi bi-envelope-fill"></i>
-            </div>
-            <h5 class="fw-bold mb-2 text-white">Email Resmi</h5>
-            <p class="text-muted small-text mb-0">info@vortexsolutions.com<br />support@vortexsolutions.com</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="form-wrapper glass-card p-4 p-md-5">
+        <!-- Middle: Tabs controller -->
+        <div class="col-lg-2">
+          <div class="d-flex flex-row flex-lg-column justify-content-center gap-3 h-100 align-items-center py-3">
+            <button
+              class="tab-btn-pill"
+              :class="{ active: activeTab === 'health' }"
+              @click="activeTab = 'health'"
+              title="Health Insurance"
+            >
+              <i class="bi bi-heart-pulse-fill"></i>
+            </button>
+            <button
+              class="tab-btn-pill"
+              :class="{ active: activeTab === 'home' }"
+              @click="activeTab = 'home'"
+              title="Home Insurance"
+            >
+              <i class="bi bi-house-heart-fill"></i>
+            </button>
+            <button
+              class="tab-btn-pill"
+              :class="{ active: activeTab === 'life' }"
+              @click="activeTab = 'life'"
+              title="Life Insurance"
+            >
+              <i class="bi bi-shield-heart"></i>
+            </button>
+            <button
+              class="tab-btn-pill"
+              :class="{ active: activeTab === 'vehicle' }"
+              @click="activeTab = 'vehicle'"
+              title="Vehicle Insurance"
+            >
+              <i class="bi bi-car-front-fill"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Tab form details -->
+        <div class="col-lg-6">
+          <div class="form-wrapper-light p-4 p-md-5">
             <form @submit.prevent="handleSubmit">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label text-white small fw-600 mb-1">Nama Lengkap</label>
-                  <input type="text" class="form-control form-input-glow form-control-lg" placeholder="Masukkan nama lengkap Anda" required />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label text-white small fw-600 mb-1">Alamat Email</label>
-                  <input type="email" class="form-control form-input-glow form-control-lg" placeholder="nama@email.com" required />
-                </div>
-                <div class="col-12">
-                  <label class="form-label text-white small fw-600 mb-1">Subjek Pesan</label>
-                  <input type="text" class="form-control form-input-glow form-control-lg" placeholder="Topik konsultasi / proyek" required />
-                </div>
-                <div class="col-12">
-                  <label class="form-label text-white small fw-600 mb-1">Detail Pesan</label>
-                  <textarea
-                    class="form-control form-input-glow form-control-lg"
-                    rows="5"
-                    placeholder="Tuliskan detail kebutuhan bisnis atau pertanyaan Anda di sini..."
-                    required
-                  ></textarea>
-                </div>
-                <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-glow-primary btn-lg w-100 py-3">
-                    <i class="bi bi-send-fill me-2"></i> Kirim Pesan Sekarang
-                  </button>
-                </div>
+              <h3 class="fw-bold text-dark mb-4 capitalize-text">
+                {{ activeTab }} Insurance Form
+              </h3>
+              
+              <div class="mb-3">
+                <label class="form-label text-dark fw-bold small mb-1">Full Name</label>
+                <input type="text" class="form-control form-input-light" placeholder="Full name" required />
               </div>
+
+              <div class="mb-3">
+                <label class="form-label text-dark fw-bold small mb-1">Email Address</label>
+                <input type="email" class="form-control form-input-light" placeholder="example@gmail.com" required />
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label text-dark fw-bold small mb-1">Your Message Here</label>
+                <textarea class="form-control form-input-light" rows="3" placeholder="Tulis pesan atau pertanyaan Anda..." required></textarea>
+              </div>
+
+              <!-- limits of balance slider -->
+              <div class="mb-4 slider-container">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <label class="form-label text-dark fw-bold small mb-0">Limits of Balance</label>
+                  <span class="fw-bold text-green">${{ formattedBalance }}</span>
+                </div>
+                <input
+                  type="range"
+                  class="slider-range"
+                  min="10000"
+                  max="500000"
+                  step="5000"
+                  v-model="balanceLimit"
+                />
+              </div>
+
+              <button type="submit" class="tp-btn tp-btn-green w-100 py-3 mt-2">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -81,96 +112,102 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const activeTab = ref('health')
+const balanceLimit = ref(50000)
+
+const formattedBalance = computed(() => {
+  return Number(balanceLimit.value).toLocaleString('en-US')
+})
+
 function handleSubmit() {
-  alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda kembali.')
+  alert(`Terima kasih! Permintaan penawaran ${activeTab.value} insurance Anda dengan limit balance $${formattedBalance.value} telah terkirim. Advisor kami akan segera menghubungi Anda.`)
 }
 </script>
 
 <style scoped>
 .contact-section {
-  background-color: #080f21;
+  background-color: var(--bg-primary);
   padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
 
-.glow-orb-contact {
+.contact-shape-circle {
   position: absolute;
-  bottom: -5%;
-  left: 20%;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
-  filter: blur(80px);
+  bottom: 10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 185, 107, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
 }
 
-.section-tag {
-  color: #06b6d4;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.fw-extrabold {
-  font-weight: 800;
-}
-
-.section-desc {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #94a3b8;
-  font-size: 15px;
-}
-
-.contact-box {
-  padding: 35px 30px;
+.advisory-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
   text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.contact-icon-box {
-  width: 52px;
-  height: 52px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+.advisory-icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #e6f8f0;
+  color: var(--accent-green);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  color: #06b6d4;
-  transition: all 0.3s ease;
+  font-size: 26px;
+  margin: 0 auto;
 }
 
-.contact-box:hover .contact-icon-box {
-  background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+/* Tabs pills matching Insurai list */
+.tab-btn-pill {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background-color: #ffffff;
+  color: var(--accent-navy);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-btn-pill:hover,
+.tab-btn-pill.active {
+  background-color: var(--accent-green);
+  color: #ffffff;
+  border-color: var(--accent-green);
+  box-shadow: 0 4px 12px rgba(0, 185, 107, 0.25);
+  transform: scale(1.08);
+}
+
+.form-wrapper-light {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.capitalize-text {
+  text-transform: capitalize;
+}
+
+.text-green {
+  color: var(--accent-green) !important;
 }
 
 .small-text {
   font-size: 14.5px;
   line-height: 1.6;
-}
-
-.form-wrapper {
-  background: rgba(16, 23, 41, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.form-wrapper:hover {
-  transform: none;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.fw-600 {
-  font-weight: 600;
 }
 
 @media (max-width: 991px) {

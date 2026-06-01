@@ -1,69 +1,57 @@
 <template>
   <section id="about" class="py-6 about-section">
-    <!-- Glow Orb -->
-    <div class="glow-orb glow-orb-about"></div>
+    <!-- Background shape -->
+    <div class="about-shape-circle"></div>
 
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0 text-center position-relative">
           <div class="about-image-wrapper">
-            <div class="about-image-glow"></div>
-            <img src="../assets/about-illustration.png" alt="Collaborative Innovation" class="about-illustration" />
+            <img src="../assets/about-light.png" alt="Collaborative workspace" class="about-illustration" />
+            <!-- Floating active user badge -->
+            <div class="floating-badge-about bg-white shadow-sm p-3 d-flex align-items-center gap-3">
+              <div class="badge-icon-box">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="text-start">
+                <h5 class="fw-bold mb-0 text-dark">1.8m</h5>
+                <p class="small text-muted mb-0">Total Active Users</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-6 ps-lg-5 text-center text-lg-start">
-          <div class="section-tag mb-3">SIAPA KAMI</div>
-          <h2 class="display-6 fw-extrabold mb-4">
-            Membangun Masa Depan Dengan <span class="text-gradient">Inovasi</span>
+          <div class="tp-section-tag mb-2">Know About Vortex</div>
+          <h2 class="tp-section-title display-6 mb-4">
+            We Provide the Best Insurance Policy
           </h2>
-          <p class="fs-6 text-muted mb-4 leading-relaxed">
-            Kami adalah perusahaan teknologi yang berdedikasi untuk memberikan solusi digital terbaik bagi pertumbuhan bisnis Anda. Dengan pengalaman lebih dari 10 tahun di industri, kami menggabungkan keahlian mendalam, proses yang andal, dan teknologi canggih untuk membantu Anda memenangkan persaingan pasar.
+          <p class="text-muted mb-4 fs-6 leading-relaxed">
+            Platform asuransi digital kami dirancang khusus menggunakan teknologi enkripsi tercanggih untuk memastikan kenyamanan dan keamanan perlindungan finansial Anda dan keluarga tercinta.
           </p>
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <div class="feature-card glass-card d-flex align-items-start gap-3 p-3">
-                <div class="feature-icon">
-                  <i class="bi bi-patch-check-fill"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-1 text-white">Profesional</h6>
-                  <p class="text-muted small mb-0">Tim ahli bersertifikat</p>
-                </div>
+          <div class="about-features-container mb-4">
+            <div class="about-feature-item d-flex align-items-start gap-3 mb-4">
+              <div class="about-feature-icon">
+                <i class="bi bi-cash-stack"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold text-dark mb-1">Moneyback Guarantee</h5>
+                <p class="text-muted small mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu nulla pariatur.</p>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="feature-card glass-card d-flex align-items-start gap-3 p-3">
-                <div class="feature-icon">
-                  <i class="bi bi-shield-fill-check"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-1 text-white">Terpercaya</h6>
-                  <p class="text-muted small mb-0">Keamanan data terjamin</p>
-                </div>
+            <div class="about-feature-item d-flex align-items-start gap-3">
+              <div class="about-feature-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold text-dark mb-1">Technical Support</h5>
+                <p class="text-muted small mb-0">Tim bantuan ahli kami siap sedia 24/7 untuk melayani pengajuan klaim darurat Anda.</p>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="feature-card glass-card d-flex align-items-start gap-3 p-3">
-                <div class="feature-icon">
-                  <i class="bi bi-lightbulb-fill"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-1 text-white">Inovatif</h6>
-                  <p class="text-muted small mb-0">Solusi berbasis AI & IoT</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="feature-card glass-card d-flex align-items-start gap-3 p-3">
-                <div class="feature-icon">
-                  <i class="bi bi-headset"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-1 text-white">Dukungan 24/7</h6>
-                  <p class="text-muted small mb-0">Respon cepat kapan saja</p>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div class="about-actions mt-4 pt-2">
+            <a href="#contact" class="tp-btn tp-btn-green py-3 px-5">
+              Let's Get Started
+            </a>
           </div>
         </div>
       </div>
@@ -73,108 +61,94 @@
 
 <style scoped>
 .about-section {
-  background-color: #080f21;
+  background-color: var(--bg-primary);
   padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
 
-.glow-orb-about {
+.about-shape-circle {
   position: absolute;
-  top: 30%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-  filter: blur(60px);
+  top: 10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 185, 107, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
-}
-
-.section-tag {
-  color: #06b6d4;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.fw-extrabold {
-  font-weight: 800;
-  color: white;
 }
 
 .about-image-wrapper {
   position: relative;
-  max-width: 480px;
+  max-width: 460px;
   margin: 0 auto;
-  padding: 15px;
-}
-
-.about-image-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-  filter: blur(40px);
-  z-index: 1;
+  padding: 10px;
 }
 
 .about-illustration {
   width: 100%;
   height: auto;
-  border-radius: 20px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.5s ease;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s ease;
 }
 
 .about-illustration:hover {
-  transform: scale(1.02) translateY(-5px);
+  transform: scale(1.01) translateY(-3px);
 }
 
-.feature-card {
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(16, 23, 41, 0.5);
-  border-radius: 14px !important;
-  text-align: left;
-  transition: all 0.3s ease;
+/* Floating Active User Badge */
+.floating-badge-about {
+  position: absolute;
+  bottom: 25px;
+  right: -15px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  z-index: 3;
+  min-width: 180px;
+  animation: float-badge 4s ease-in-out infinite;
 }
 
-.feature-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(6, 182, 212, 0.3);
-  background: rgba(16, 23, 41, 0.8);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.1);
-}
-
-.feature-icon {
-  width: 42px;
-  height: 42px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  border-radius: 10px;
+.badge-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e6f8f0;
+  color: var(--accent-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #06b6d4;
-  font-size: 20px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+  font-size: 18px;
 }
 
-.feature-card:hover .feature-icon {
-  background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
-  color: white;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
-  border-color: transparent;
+.about-feature-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #e6f8f0;
+  color: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+@keyframes float-badge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @media (max-width: 991px) {
   .about-section {
     padding: 60px 0;
+  }
+  .floating-badge-about {
+    right: 20px;
+    bottom: -10px;
   }
 }
 </style>

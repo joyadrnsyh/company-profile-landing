@@ -11,26 +11,26 @@
               <span class="brand-name">VORTEX</span>
             </div>
             <p class="small text-muted leading-relaxed">
-              Membantu bisnis mempercepat akselerasi digital melalui keahlian IT profesional tingkat dunia yang tangguh dan terpercaya.
+              Platform proteksi asuransi digital terpercaya untuk mengamankan aset, keluarga, dan bisnis Anda dengan pelayanan responsif 24/7.
             </p>
           </div>
         </div>
         <div class="col-lg-2 col-md-6 offset-lg-1">
           <h6 class="fw-bold mb-3 text-white">Company</h6>
           <ul class="list-unstyled footer-links-list">
-            <li><a href="#about" class="footer-link">Tentang Kami</a></li>
-            <li><a href="#" class="footer-link">Blog & Berita</a></li>
-            <li><a href="#" class="footer-link">Karir Rekrutmen</a></li>
-            <li><a href="#" class="footer-link">Press Kit</a></li>
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Blog & News</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Claim Process</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
-          <h6 class="fw-bold mb-3 text-white">Layanan Utama</h6>
+          <h6 class="fw-bold mb-3 text-white">Insurance Products</h6>
           <ul class="list-unstyled footer-links-list">
-            <li><a href="#services" class="footer-link">Konsultasi IT & Digital</a></li>
-            <li><a href="#services" class="footer-link">Cloud Solutions</a></li>
-            <li><a href="#services" class="footer-link">Keamanan Data Siber</a></li>
-            <li><a href="#services" class="footer-link">Technical Support 24/7</a></li>
+            <li><a href="#services" class="footer-link">Car Insurance</a></li>
+            <li><a href="#services" class="footer-link">Home Insurance</a></li>
+            <li><a href="#services" class="footer-link">Life Insurance</a></li>
+            <li><a href="#services" class="footer-link">Health Insurance</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -39,7 +39,7 @@
           <form @submit.prevent="handleSubscribe" class="newsletter-form mb-3">
             <div class="input-group">
               <input type="email" class="form-control form-input-glow" placeholder="Email Anda" required />
-              <button class="btn btn-glow-primary px-3" type="submit">
+              <button class="btn tp-btn tp-btn-green px-3" type="submit">
                 <i class="bi bi-arrow-right"></i>
               </button>
             </div>
@@ -85,7 +85,7 @@ function handleSubscribe() {
 
 <style scoped>
 .footer {
-  background: #02040a;
+  background: #080f1e;
   color: #94a3b8;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 60px;
@@ -94,7 +94,7 @@ function handleSubscribe() {
 .logo-box-mini {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+  background-color: var(--accent-green);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -106,11 +106,8 @@ function handleSubscribe() {
 .brand-name {
   font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 1.5px;
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .footer-links-list li {
@@ -126,7 +123,7 @@ function handleSubscribe() {
 }
 
 .footer-link:hover {
-  color: #06b6d4;
+  color: var(--accent-green);
   transform: translateX(4px);
 }
 
@@ -139,10 +136,26 @@ function handleSubscribe() {
 .newsletter-form .btn {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  color: white;
+}
+
+.form-input-glow {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+.form-input-glow:focus {
+  border-color: var(--accent-green) !important;
+  box-shadow: 0 0 0 3px rgba(0, 185, 107, 0.2) !important;
 }
 
 .social-links-row {
@@ -168,31 +181,9 @@ function handleSubscribe() {
 .social-icon:hover {
   color: white;
   transform: translateY(-3px);
-}
-
-.social-icon.fb:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-  box-shadow: 0 5px 12px rgba(24, 119, 242, 0.35);
-}
-
-.social-icon.tw:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #000000;
-  box-shadow: 0 5px 12px rgba(255, 255, 255, 0.35);
-}
-
-.social-icon.li:hover {
-  background: #0a66c2;
-  border-color: #0a66c2;
-  box-shadow: 0 5px 12px rgba(10, 102, 194, 0.35);
-}
-
-.social-icon.ig:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  border-color: transparent;
-  box-shadow: 0 5px 12px rgba(204, 35, 102, 0.35);
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  box-shadow: 0 5px 12px rgba(0, 185, 107, 0.35);
 }
 
 .footer-divider {
